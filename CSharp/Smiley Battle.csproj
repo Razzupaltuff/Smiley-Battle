@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7B62E05-4527-445A-9D02-2201AB7E3F2C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SmileyBattle</RootNamespace>
+    <AssemblyName>SmileyBattle</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Configs\App.config" />
+    <None Include="Configs\packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="actor.cs" />
+    <Compile Include="actorhandler.cs" />
+    <Compile Include="arghandler.cs" />
+    <Compile Include="camera.cs" />
+    <Compile Include="collisionhandler.cs" />
+    <Compile Include="controlshandler.cs" />
+    <Compile Include="cubemap.cs" />
+    <Compile Include="dialheap.cs" />
+    <Compile Include="effecthandler.cs" />
+    <Compile Include="gamedata.cs" />
+    <Compile Include="gameitems.cs" />
+    <Compile Include="GL.cs" />
+    <Compile Include="globals.cs" />
+    <Compile Include="icosphere.cs" />
+    <Compile Include="map.cs" />
+    <Compile Include="mapdata.cs" />
+    <Compile Include="maploader.cs" />
+    <Compile Include="mapsegment.cs" />
+    <Compile Include="matrix.cs" />
+    <Compile Include="mesh.cs" />
+    <Compile Include="networkhandler.cs" />
+    <Compile Include="networklistener.cs" />
+    <Compile Include="networkmessage.cs" />
+    <Compile Include="physicshandler.cs" />
+    <Compile Include="plane.cs" />
+    <Compile Include="player.cs" />
+    <Compile Include="playerhalo.cs" />
+    <Compile Include="playeroutline.cs" />
+    <Compile Include="playershadow.cs" />
+    <Compile Include="projectile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="quad.cs" />
+    <Compile Include="renderer.cs" />
+    <Compile Include="reticle.cs" />
+    <Compile Include="router.cs" />
+    <Compile Include="scoreboard.cs" />
+    <Compile Include="SDL\SDL2.cs" />
+    <Compile Include="SDL\SDL2_image.cs" />
+    <Compile Include="SDL\SDL2_mixer.cs" />
+    <Compile Include="SDL\SDL2_ttf.cs" />
+    <Compile Include="segmentmap.cs" />
+    <Compile Include="shaderhandler.cs" />
+    <Compile Include="shaders.cs" />
+    <Compile Include="smileybattle.cs" />
+    <Compile Include="soundhandler.cs" />
+    <Compile Include="soundobject.cs" />
+    <Compile Include="texcoord.cs" />
+    <Compile Include="texture.cs" />
+    <Compile Include="texturebuffer.cs" />
+    <Compile Include="texturehandler.cs" />
+    <Compile Include="timer.cs" />
+    <Compile Include="torus.cs" />
+    <Compile Include="udp.cs" />
+    <Compile Include="vao.cs" />
+    <Compile Include="vbo.cs" />
+    <Compile Include="vector.cs" />
+    <Compile Include="vertexdatabuffers.cs" />
+    <Compile Include="viewer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SharpGL, Version=3.1.1.0, Culture=neutral, PublicKeyToken=27fc851303210b27, processorArchitecture=MSIL">
+      <HintPath>packages\SharpGL.3.1.1\lib\net472\SharpGL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
