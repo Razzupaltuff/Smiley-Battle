@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{dcbbb276-c256-4c21-9537-5345091cb119}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\plane.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\camera.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\arghandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\texture.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vector.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tools\carray.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tools\cavltree.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tools\cdatapool.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tools\cquicksort.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tools\cstack.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tools\cstring.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\texcoord.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vao.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vbo.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\shaders.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\quad.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cubemap.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mesh.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\texturehandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tools\clist.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\icosphere.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\player.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\torus.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\actor.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\matrix.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\timer.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\projectile.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gamedata.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\networkhandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\networkmessage.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\udp.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\networklistener.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\actorhandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\soundhandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\controlshandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\router.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\map.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mapsegments.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\maploader.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\textfileloader.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mapdata.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\collisionhandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\physicshandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameitems.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\reticle.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\effecthandler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\scoreboard.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smileybattle.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\plane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\arghandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\quad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vertexdatabuffers.h">
+      <Filter>Header files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vbo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\texturehandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\icosphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\torus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\projectile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gamedata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\networkmessage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\udp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\networklistener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\networkhandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\soundhandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\actorhandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\controlshandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mapsegments.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\router.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\textfileloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\maploader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mapdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameitems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\reticle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\effecthandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\collisionhandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\physicshandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scoreboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smileybattle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cubemap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
