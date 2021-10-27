@@ -1,1 +1,1 @@
-# Smiley-Battle-C-
+# Smiley-Battle-CPP
