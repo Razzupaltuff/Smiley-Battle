@@ -1,0 +1,20 @@
+v1.0.7:
+    Fixed: Last message time wasn't properly initialized when adding a new player, potentially causing the player to prematurely disconnect and never complte session state sync'ing.
+v1.0.6:
+    Fixed: Removed a few undetected syntax errors in unused code.
+	Improved: Made sure only one player can enter a game at a time to avoid synchronization errors.
+v1.0.5:
+    Fixed: Removed a few memory and resource leaks.
+v1.0.4:
+    Improved: Minor code revision of CVector and CMatrix classes.
+v1.0.3:
+	Improved: Vector class members will only be accessed via getter functions now
+	Improved: Router provides a max. edge cost value for external routing related calculations
+	Fixed: Removed a few const method result declarations
+v1.0.2: 
+	Improved: Distance calculation
+v1.0.1:
+	Fixed: The networkhandler's Broadcast sent data to the local player
+v1.0.0:
+	Initial release
+	
