@@ -207,8 +207,8 @@ public class Map : MapData
     {
         Func<int, int, int, int> Clamp = (val, min, max) => { return Math.Max(min, Math.Min(val, max)); };
         return new MapPosition(
-            Clamp ((int) position.X / (int)m_scale, 0, Width()), 
-            Clamp ((int)m_segmentMap.m_height + (int)(position.Z / m_scale) - 1, 0, Height())); // segments are added in reversed z order
+            Clamp ((int) position.X / (int)m_scale, 0, Width() - 1), 
+            Clamp ((int)m_segmentMap.m_height + (int)(position.Z / m_scale) - 1, 0, Height() - 1)); // segments are added in reversed z order
     }
 
 
@@ -311,7 +311,10 @@ public class Map : MapData
         if (s0 == s1)
             return 0;
         RouteData rd = m_segmentMap.Distance(s0, s1);
-        return rd.m_distance + (v0 - rd.m_startPos).Len() + (v1 - rd.m_endPos).Len();
+        return 
+            (rd.m_distance < 0) 
+            ? (v1 - v0).Len ()
+            : rd.m_distance + (v0 - rd.m_startPos).Len() + (v1 - rd.m_endPos).Len();
     }
 
 

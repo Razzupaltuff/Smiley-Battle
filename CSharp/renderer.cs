@@ -115,7 +115,7 @@ public class Renderer
         m_aspectRatio = (float)m_width / (float)m_height;
         m_window =
             SDL.SDL_CreateWindow(
-                "[C#] Smiley Battle 1.0.0 by Dietfrid Mali",
+                "[C#] Smiley Battle 1.0.8 by Dietfrid Mali",
                 SDL.SDL_WINDOWPOS_CENTERED,
                 SDL.SDL_WINDOWPOS_CENTERED,
                 m_width, m_height + m_statusHeight,

@@ -165,6 +165,15 @@ public class ActorHandler
         return null;
     }
 
+    public Projectile FindProjectile(int colorIndex)
+    {
+        foreach (Actor a in m_actors)
+            if (a.IsProjectile () && (a.GetColorIndex() == colorIndex))
+                return (Projectile) a;
+        return null;
+    }
+
+
 
     public void CleanupActors()
     {     // required when the local player disconnected && needs to rejoin #include "a clean slate

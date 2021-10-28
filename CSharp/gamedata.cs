@@ -18,6 +18,7 @@ public class GameData
     public SortedDictionary<string, Vector> m_colorValues;
     public SortedDictionary<string, Texture> m_textures;
 
+    public int m_fireMode;
     public int m_fireDelay;
     public int m_healDelay;
     public int m_respawnDelay;
@@ -80,6 +81,7 @@ public class GameData
         m_playerMoods = new string[] { "-sad",  "-neutral",  "-happy" };
         CreatePlayerTextures();
 
+        m_fireMode = Globals.argHandler.IntVal("firemode", 0, 0);                  // limit fire rate to one short per 500 ms (2 shots/s)
         m_fireDelay = Globals.argHandler.IntVal("firedelay", 0, 250);                  // limit fire rate to one short per 500 ms (2 shots/s)
         m_healDelay = Globals.argHandler.IntVal("healdelay", 0, 5000);
         m_respawnDelay = Globals.argHandler.IntVal("respawndelay", 0, 5000);           // time [ms] between disappearing and reappearing after death

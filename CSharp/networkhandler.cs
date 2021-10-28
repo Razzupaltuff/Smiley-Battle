@@ -386,6 +386,7 @@ public class NetworkHandler : UDP
     {
         string message = BuildMessage(";",
             IdFromName("SYNCPARAMS") +
+            Convert.ToString(Globals.gameData.m_fireMode),
             Convert.ToString(Globals.gameData.m_fireDelay),
             Convert.ToString(Globals.gameData.m_healDelay),
             Convert.ToString(Globals.gameData.m_respawnDelay),
@@ -586,15 +587,16 @@ public class NetworkHandler : UDP
             return message.m_result;
         if (OutOfSync(eJoinState.jsParams))
             return -1;
-        Globals.gameData.m_fireDelay = message.Int(0);
-        Globals.gameData.m_healDelay = message.Int(1);
-        Globals.gameData.m_respawnDelay = message.Int(2);
-        Globals.gameData.m_immunityDuration = message.Int(3);
-        Globals.gameData.m_pointsForKill = message.Int(4);
-        Globals.gameData.m_projectileSize = message.Float(5);
-        Globals.gameData.m_projectileSpeed = message.Float(6);
-        Globals.controlsHandler.SetMoveSpeed(message.Float(7));
-        Globals.controlsHandler.SetTurnSpeed(message.Float(8));
+        Globals.gameData.m_fireMode = message.Int(0);
+        Globals.gameData.m_fireDelay = message.Int(1);
+        Globals.gameData.m_healDelay = message.Int(2);
+        Globals.gameData.m_respawnDelay = message.Int(3);
+        Globals.gameData.m_immunityDuration = message.Int(4);
+        Globals.gameData.m_pointsForKill = message.Int(5);
+        Globals.gameData.m_projectileSize = message.Float(6);
+        Globals.gameData.m_projectileSpeed = message.Float(7);
+        Globals.controlsHandler.SetMoveSpeed(message.Float(8));
+        Globals.controlsHandler.SetTurnSpeed(message.Float(9));
         m_joinState = eJoinState.jsPlayers;
         return 1;
     }
