@@ -48,6 +48,7 @@ CGameData::CGameData() {
     m_playerMoods = { CString("-sad"),  CString("-neutral"),  CString("-happy") };
     CreatePlayerTextures();
 
+    m_fireMode = argHandler->IntVal ("firemode", 0, 0);
     m_fireDelay = argHandler->IntVal("firedelay", 0, 250);                  // limit fire rate to one short per 500 ms (2 shots/s)
     m_healDelay = argHandler->IntVal("healdelay", 0, 5000);
     m_respawnDelay = argHandler->IntVal("respawndelay", 0, 5000);           // time [ms] between disappearing and reappearing after death

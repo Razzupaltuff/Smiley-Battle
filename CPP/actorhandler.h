@@ -55,6 +55,8 @@ class CActorHandler {
 
         CActor* FindActor(int id, int colorIndex);
 
+        CProjectile* FindProjectile (int colorIndex);
+            
         void CleanupActors(void);
 
         void Cleanup (void);

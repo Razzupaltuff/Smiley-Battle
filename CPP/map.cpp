@@ -76,7 +76,11 @@ auto CMap::SegmentAt(CVector position) {
     struct retVals {
         int x, y;
     };
-    return retVals{ int(position.X()) / int(m_scale), int(m_segmentMap.m_height + int(position.Z() / m_scale) - 1) }; // segments are added in reversed z order
+    auto Clamp = [](auto val, auto minVal, auto maxVal) { return max (min (minVal, maxVal), min (val, max (minVal, maxVal))); };
+    return retVals{
+        Clamp (int(position.X()) / int(m_scale), 0, Width() - 1), 
+        Clamp (m_segmentMap.m_height + int(position.Z() / m_scale) - 1, 0, Height() - 1) 
+    }; // segments are added in reversed z order
 }
 
 
@@ -168,7 +172,10 @@ float CMap::Distance(CVector v0, CVector v1) {
     if (s0 == s1)
         return 0;
     CRouteData& rd = m_segmentMap.Distance(s0, s1);
-    return rd.m_distance + (v0 - rd.m_startPos).Len() + (v1 - rd.m_endPos).Len();
+    return 
+        (rd.m_distance < 0)
+        ? (v1 - v0).Len ()
+        : rd.m_distance + (v0 - rd.m_startPos).Len() + (v1 - rd.m_endPos).Len();
 }
 
 

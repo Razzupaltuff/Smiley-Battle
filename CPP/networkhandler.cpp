@@ -264,9 +264,19 @@ void CNetworkHandler::Create(CString address, uint16_t port) {
     // format: PARAMS:<fire delay>;<heal delay>;<respawn delay>;<immunity duration>;<points for kill>;<projectile size>;<projectile speed>;<move speed>;<turn speed>
     void CNetworkHandler::SendParams(CString address, uint16_t port) {
         LOG("SendParams\n")
-        CString message = BuildMessage(";", { IdFromName("SYNCPARAMS") + CString(gameData->m_fireDelay), CString(gameData->m_healDelay), CString(gameData->m_respawnDelay), CString(gameData->m_immunityDuration),
-                                         CString(gameData->m_pointsForKill), CString(gameData->m_projectileSize), CString(gameData->m_projectileSpeed), 
-                                         CString(controlsHandler->GetMoveSpeed()), CString(controlsHandler->GetTurnSpeed()) });
+        CString message = 
+            BuildMessage(";", { 
+                IdFromName("SYNCPARAMS") + CString(gameData->m_fireMode), 
+                CString(gameData->m_fireDelay),
+                CString(gameData->m_healDelay), 
+                CString(gameData->m_respawnDelay), 
+                CString(gameData->m_immunityDuration),
+                CString(gameData->m_pointsForKill), 
+                CString(gameData->m_projectileSize),
+                CString(gameData->m_projectileSpeed), 
+                CString(controlsHandler->GetMoveSpeed()), 
+                CString(controlsHandler->GetTurnSpeed()) 
+            });
         Transmit(message, address, port);
     }
 
@@ -444,15 +454,16 @@ void CNetworkHandler::Create(CString address, uint16_t port) {
         LOG("SyncParams\n")
         if (OutOfSync(jsParams))
             return -1;
-        gameData->m_fireDelay = message.Int(0);
-        gameData->m_healDelay = message.Int(1);
-        gameData->m_respawnDelay = message.Int(2);
-        gameData->m_immunityDuration = message.Int(3);
-        gameData->m_pointsForKill = message.Int(4);
-        gameData->m_projectileSize = message.Float(5);
-        gameData->m_projectileSpeed = message.Float(6);
-        controlsHandler->SetMoveSpeed(message.Float(7));
-        controlsHandler->SetTurnSpeed(message.Float(8));
+        gameData->m_fireMode = message.Int (0);
+        gameData->m_fireDelay = message.Int(1);
+        gameData->m_healDelay = message.Int(2);
+        gameData->m_respawnDelay = message.Int(3);
+        gameData->m_immunityDuration = message.Int(4);
+        gameData->m_pointsForKill = message.Int(5);
+        gameData->m_projectileSize = message.Float(6);
+        gameData->m_projectileSpeed = message.Float(7);
+        controlsHandler->SetMoveSpeed(message.Float(8));
+        controlsHandler->SetTurnSpeed(message.Float(9));
         m_joinState = jsPlayers;
         return 1;
     }

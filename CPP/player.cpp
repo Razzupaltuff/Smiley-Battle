@@ -219,15 +219,25 @@ bool CViewer::ReadyToFire(void) {
         return false;
     if (m_fireTime == 0)
         return true;
-    return (gameData->m_gameTime - m_fireTime > gameData->m_fireDelay);
+    if (gameData->m_fireMode == 0)
+        return (gameData->m_gameTime - m_fireTime > gameData->m_fireDelay);
+    if (gameData->m_fireMode == 1) 
+        return (actorHandler->FindProjectile (GetColorIndex ()) == nullptr);
+    return true;
 }
 
 
 void CViewer::Fire(void) {
     // global gameData, gameItems
     if (ReadyToFire()) {
+        CProjectile* projectile;
+        if (gameData->m_fireMode == 2) {
+            projectile = actorHandler->FindProjectile (GetColorIndex ());
+            if (projectile != nullptr)
+                projectile->Delete ();
+        }
         m_fireTime = gameData->m_gameTime;
-        CProjectile* projectile = actorHandler->CreateProjectile(this);
+        projectile = actorHandler->CreateProjectile(this);
         if (projectile)
             networkHandler->BroadcastFire(projectile);
     }

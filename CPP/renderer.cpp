@@ -77,7 +77,7 @@ void CRenderer::SetupDisplay (int width, int height, bool fullscreen) {
     m_aspectRatio = float (m_width) / float (m_height);
     m_window =
         SDL_CreateWindow (
-            "[C++] Smiley Battle 1.0.7 by Dietfrid Mali",
+            "[C++] Smiley Battle 1.0.8 by Dietfrid Mali",
             SDL_WINDOWPOS_CENTERED,
             SDL_WINDOWPOS_CENTERED,
             m_width, m_height + m_statusHeight,

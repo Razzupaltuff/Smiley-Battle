@@ -115,6 +115,14 @@ CActor* CActorHandler::FindActor(int id, int colorIndex) {
 }
 
 
+CProjectile* CActorHandler::FindProjectile (int colorIndex) {
+    for (auto [i, a] : m_actors)
+        if (a->IsProjectile () && (a->GetColorIndex () == colorIndex))
+            return (CProjectile*) a;
+    return nullptr;
+}
+
+
 void CActorHandler::CleanupActors (void) {     // required when the local player disconnected && needs to rejoin #include "a clean slate
     for (auto [i, a] : m_actors)
         if ((a->GetId() != 0) || (a->GetColorIndex() != m_viewer->GetColorIndex())) 

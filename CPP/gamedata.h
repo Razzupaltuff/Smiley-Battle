@@ -26,6 +26,7 @@ class CGameData {
         CAvlTree<CString, CVector>   m_colorValues;
         CAvlTree<CString, CTexture*> m_textures;
 
+        int             m_fireMode;
         int             m_fireDelay;
         int             m_healDelay;
         int             m_respawnDelay;
