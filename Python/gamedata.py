@@ -41,6 +41,7 @@ class CGameData:
         self.playerMoods = ["-sad", "-neutral", "-happy"]
         self.CreatePlayerTextures ()
 
+        self.fireMode = globals.argHandler.IntVal ("firemode", 0, 0)
         self.fireDelay = globals.argHandler.IntVal ("firedelay", 0, 250)                  # limit fire rate to one short per 500 ms (2 shots/s)
         self.healDelay = globals.argHandler.IntVal ("healdelay", 0, 5000)
         self.respawnDelay = globals.argHandler.IntVal ("respawndelay", 0, 5000)           # time [ms] between disappearing and reappearing after death

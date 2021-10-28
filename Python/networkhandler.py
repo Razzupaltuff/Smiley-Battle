@@ -525,6 +525,7 @@ class CNetworkHandler (CUDP):
                        str (globals.gameData.pointsForKill) + ";" + \
                        str (globals.gameData.projectileSize) + ";" + \
                        str (globals.gameData.projectileSpeed) + ";" + \
+                       str (globals.gameData.fireMode) + ";" + \
                        str (globals.controlsHandler.GetMoveSpeed ()) + ";" + \
                        str (globals.controlsHandler.GetTurnSpeed ()),
                        address, port)
@@ -662,19 +663,20 @@ class CNetworkHandler (CUDP):
 
     # format: PARAMS<heal delay>;<respawn delay>;<immunity duration>;<move speed>;<turn speed>
     def SyncParams (self, message):
-        if not message.IsValid (9):
+        if not message.IsValid (10):
             return message.result
         if self.OutOfSync (self.joinState.params):
             return -1
-        globals.gameData.fireDelay = message.Int (0)
-        globals.gameData.healDelay = message.Int (1)
-        globals.gameData.respawnDelay = message.Int (2)
-        globals.gameData.immunityDuration = message.Int (3)
-        globals.gameData.pointsForKill = message.Int (4)
-        globals.gameData.projectileSize = message.Float (5)
-        globals.gameData.projectileSpeed = message.Float (6)
-        globals.controlsHandler.SetMoveSpeed (message.Float (7))
-        globals.controlsHandler.SetTurnSpeed (message.Float (8))
+        globals.gameData.fireMode = message.Int (0)
+        globals.gameData.fireDelay = message.Int (1)
+        globals.gameData.healDelay = message.Int (2)
+        globals.gameData.respawnDelay = message.Int (3)
+        globals.gameData.immunityDuration = message.Int (4)
+        globals.gameData.pointsForKill = message.Int (5)
+        globals.gameData.projectileSize = message.Float (6)
+        globals.gameData.projectileSpeed = message.Float (7)
+        globals.controlsHandler.SetMoveSpeed (message.Float (8))
+        globals.controlsHandler.SetTurnSpeed (message.Float (9))
         self.joinState.state = self.joinState.players
         return 1
 

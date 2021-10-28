@@ -119,6 +119,13 @@ class CActorHandler:
         return None
 
 
+    def FindProjectile (self, colorIndex : int) -> CActor:
+        for a in self.actors:
+            if a.IsProjectile () and (a.GetColorIndex () == colorIndex):
+                return a
+        return None
+
+
     def FindPlayer (self, colorIndex : int) -> CPlayer:
         return self.FindActor (0, colorIndex)
 

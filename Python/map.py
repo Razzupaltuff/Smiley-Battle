@@ -146,8 +146,9 @@ class CMap (CMapData):
 
 
     def SegmentAt (self, position):
-        return int (position.x) // int (self.scale), \
-               int (self.segmentMap.height + int (position.z / self.scale) - 1) # segments are added in reversed z order
+        clamp = lambda val, minVal, maxVal : min (max (val, minVal), maxVal)
+        return clamp (int (position.x) // int (self.scale), 0, self.Width() - 1), \
+               clamp (int (self.segmentMap.height + int (position.z / self.scale) - 1), 0, self.Height () - 1) # segments are added in reversed z order
 
 
     def SegmentCenter (self, x, y):
@@ -278,6 +279,6 @@ class CMap (CMapData):
         if (s0 == s1):
             return 0
         rd = self.segmentMap.Distance (s0, s1)
-        return rd.distance + (p0 - rd.startPos).Length () + (p1 - rd.endPos).Length ()
+        return (p1 - p0).Length () if (rd.distance < 0) else rd.distance + (p0 - rd.startPos).Length () + (p1 - rd.endPos).Length ()
 
 # =================================================================================================

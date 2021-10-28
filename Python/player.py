@@ -295,12 +295,20 @@ class CViewer (CPlayer):
             return False
         if (self.fireTime == 0):
             return True
-        return (globals.gameData.gameTime - self.fireTime > globals.gameData.fireDelay)
+        if (globals.gameData.fireMode == 0):
+            return (globals.gameData.gameTime - self.fireTime > globals.gameData.fireDelay)
+        if (globals.gameData.fireMode == 1):
+            return globals.actorHandler.FindProjectile (self.GetColorIndex ()) is None
+        return True
 
 
     def Fire (self):
         # global gameData, gameItems
         if self.ReadyToFire ():
+            if (globals.gameData.fireMode == 2):
+                projectile = globals.actorHandler.FindProjectile (self.GetColorIndex ())
+                if (projectile is not None):
+                    projectile.Delete ()
             self.fireTime = globals.gameData.gameTime
             projectile = globals.actorHandler.CreateProjectile (self)
             if (projectile is not None):

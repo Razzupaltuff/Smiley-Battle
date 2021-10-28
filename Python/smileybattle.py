@@ -85,7 +85,7 @@ class CApplication:
     def InitDisplay (self) -> None:
         pygame.init ()
         if pygame.display.get_init ():
-            pygame.display.set_caption ("[Python] Smiley Battle 1.0.5 by Dietfrid Mali")
+            pygame.display.set_caption ("[Python] Smiley Battle 1.0.8 by Dietfrid Mali")
             return True
         print ("Couldn't initialize display")
         exit ()
